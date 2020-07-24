@@ -1,8 +1,16 @@
 # Script to transform the BuLi data of the BTLLasso-Package into match-by-match data frame. 
 # Data includes Total distance covered (km), ball position (%), Tackling rate (%), Shots on goal (n), Completion rate for passes (%), fouls suffered (n), offsides (n) for all seasons
 # Data also includes corners for the 2016/17 and 2017/18 season
+# Note that the final result is displayed as ordinal variable:
+# 1 = if the home team has won by at least 2 goals
+# 2 = if the home team has won by one goal
+# 3 = tie
+# 4 = if the away team has won by one goal
+# 5 = if the away team has won by at least 2 goals
 # For this example, I use the 2016/2017 season
 # To better access it, Z1 and Y5 are extracted from list and renamed properly
+install.packages('BTLLasso')
+library(BTLLasso)
 data("Buli1617")
 GeneralInformation<-Buli1617$Y5
 DataMatchdays<-Buli1617$Z1
